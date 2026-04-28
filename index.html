@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunjan Nanoma | Data Analyst Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19; 
+            --card-bg: #161b22;
+            --text-main: #f0f6fc;
+            --text-dim: #8b949e;
+            --accent: #58a6ff; 
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --nav-bg: rgba(11, 15, 25, 0.9); /* Transparent dark for nav */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth; /* स्मूथ स्क्रॉलिंग के लिए */
+        }
+
+        /* --- New Navigation Styles --- */
+        nav {
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- Original Styles --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 70px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 { margin: 10px 0; font-size: 2.8rem; font-weight: 800; color: var(--text-main); }
+        .subtitle { color: var(--accent); font-size: 1.3rem; font-weight: 500; margin-top: -5px; }
+        .education-info { color: var(--text-dim); font-size: 1rem; margin-top: 5px; }
+
+        section { 
+            margin-bottom: 80px; 
+            scroll-margin-top: 100px; /* Navbar के नीचे कंटेंट न दबे */
+        }
+
+        h2 { 
+            font-size: 2rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 10px;
+            margin-bottom: 35px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #30363d;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--accent);
+            box-shadow: 0 8px 15px rgba(88, 166, 255, 0.1);
+        }
+
+        .card img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-bottom: 1px solid #30363d;
+        }
+
+        .card-content { padding: 20px; flex-grow: 1; }
+        .card h3 { margin-top: 0; color: var(--text-main); font-size: 1.4rem;}
+        .card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 15px;}
+        
+        .tag {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        .links { margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;}
+        .btn {
+            text-decoration: none;
+            color: var(--text-main);
+            border: 1px solid var(--accent);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn:hover { background: var(--accent); color: #fff; }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px 0;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            border-top: 1px solid #30363d;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .nav-links { gap: 15px; }
+            .nav-links a { font-size: 0.85rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Gunjan Nanoma</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header id="home">
+            <img src="/my photo(2).jpg" alt="Gunjan Nanoma Profile" class="profile-img">
+            <h1>Gunjan Nanoma</h1>
+            <p class="subtitle">Data Analyst</p>
+            <p class="education-info">B.Sc Graduate (2022) | GGTU, Banswara</p>
+        </header>
+
+        <section id="about">
+    <h2>About Me</h2>
+    <div style="display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+            <p>
+                Hello! I'm <strong>Gunjan Nanoma</strong>, a dedicated <strong>Data Analyst</strong> with a passion for turning complex data into actionable insights. 
+                I graduated with a B.Sc. from GGTU, Banswara in 2022, which provided me with a strong analytical foundation.
+            </p>
+            <p>
+                My expertise lies in data visualization using <strong>Power BI</strong>, data cleaning, and identifying business trends. 
+                Currently, I am expanding my skill set into web development and version control systems like <strong>GitHub</strong> to build more interactive and accessible data solutions.
+            </p>
+        </div>
+        
+        <div style="flex: 1; min-width: 300px; background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid #30363d;">
+            <h3 style="margin-top: 0; color: var(--accent); font-size: 1.2rem;">Technical Toolkit</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--accent);">📊</span> <strong>Analysis:</strong> Power BI, Excel, Churn Analysis
+                </li>
+                <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--accent);">💻</span> <strong>Web Dev:</strong> HTML5, CSS3 (Portfolio Design)
+                </li>
+                <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--accent);">🗄️</span> <strong>Data Tools:</strong> SQL, Microsoft 365, GitHub
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <img src="/Screenshot 2026-04-16 094942.png" alt="Madhav E-Commerce Sales Dashboard">
+                    <div class="card-content">
+                        <h3>Madhav E-Commerce Sales</h3>
+                        <p>Comprehensive analysis of sales data. Tracked INR 438K Amount, 37K Profit, and 121K AOV.</p>
+                        <div class="tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Sales Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Screenshot 2026-04-13 081820.png" alt="Medical Executive Summary Dashboard">
+                    <div class="card-content">
+                        <h3>Medical Revenue Summary</h3>
+                        <p>Executive and Detailed summary of medical operations. Analyzed INR 339K Total Revenue.</p>
+                        <div class="tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Healthcare Data</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="/Screenshot 2026-04-14 204417.png" alt="Top Performing Doctors Dashboard">
+                    <div class="card-content">
+                        <h3>Doctor Performance Analysis</h3>
+                        <p>Operational dashboard tracking total amount (191.21K) against treatment types.</p>
+                        <div class="tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Performance Metrics</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Connect with Me</h2>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/gunjan-nanoma-930491253/" target="_blank" class="btn">
+                    🔗 LinkedIn Profile
+                </a>
+                
+                <a href="#" target="_blank" class="btn">
+                    💻 GitHub Profile
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Gunjan Nanoma. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
